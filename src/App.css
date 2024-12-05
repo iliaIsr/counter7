@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ViewValueContainer{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: #21a2bf;
+  border: 2px #21a2bf solid;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 250px;
+  height: 130px;
+  margin: 10px;
+  background-color: #262929;
+}
+.ViewValueContainerDisabled{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: #f6072b;
+  border: 2px #21a2bf solid;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 250px;
+  height: 130px;
+  margin: 10px;
+  background-color: #262929;
+}
+
+.BaseContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px #21a2bf solid;
+  border-radius: 5px;
+  width: 350px;
+  height: 280px;
+  background-color: #262929;
+}
+.DubleButtonContainer{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  border: 2px #21a2bf solid;
+  border-radius: 5px;
+  width: 250px;
+  height: 70px;
+}
+.ButtonBase{
+  font-size: 30px;
+  background-color: #21a2bf;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #262929;
+}
+.ViewValueContainer.set{
+  font-size: 20px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+}
+.InputBase {
+  height: 40px;
+  display: flex;              /* Активируем flexbox */
+  align-items: center;        /* Выравниваем по центру по вертикали */
+  justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.InputBase span {
+  margin-right: 10px;        /* Отступ между текстом и полем ввода */
+  font-size: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ShortInput{
+  width: 30%;
+}
+.AppContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  flex-direction: row;
+  gap: 30px;
 }
