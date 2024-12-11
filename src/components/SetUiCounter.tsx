@@ -1,37 +1,31 @@
+import {Button} from "./Button";
+import {Input} from "./Input";
+
+
 type SetUiCounterPropsType = {
-    ValueFoo:(num:number,value:string)=>void;
-    SetFoo:()=>void;
+    ValueFoo: (num: number, value: string) => void;
+    SetFoo: () => void;
+    message:string
 }
 
 
-export const SetUiCounter = ({ValueFoo,SetFoo}:SetUiCounterPropsType) => {
+export const SetUiCounter = ({message, ValueFoo, SetFoo}: SetUiCounterPropsType) => {
 
-    const onChangeHandler = (e: string, val: string) => {
-        ValueFoo(+e, val)
-    }
-    const OnSetHandler=()=>{
-        SetFoo()
-    }
+    const onChangeHandler = (e: string, val: string) => ValueFoo(+e, val)
+    const OnSetHandler = () => SetFoo()
+    const Message=message==="incorrect value"
+
     return (
         <div className="BaseContainer">
             <div className="ViewValueContainer set">
-                <div className="InputBase">
-                    <span>max value :</span>
-                    <input type='number' className="ShortInput" onChange={(e) => {
-                        onChangeHandler(e.target.value, "max")
-                    }}/>
-                </div>
-                <div className="InputBase">
-                    <span>start value:</span>
-                    <input type='number' className="ShortInput" onChange={(e) => {
-                        onChangeHandler(e.target.value, "start")
-                    }}/>
-                </div>
 
+
+                <Input name={'max value'} Message={Message} onChangeHandler={onChangeHandler}/>
+                <Input name={'min value'} Message={Message} onChangeHandler={onChangeHandler}/>
             </div>
-            <div className="DubleButtonContainer">
-                <button className="ButtonBase" onClick={OnSetHandler}>set</button>
 
+            <div className="DubleButtonContainer">
+                <Button onClick={OnSetHandler} name="Set" disabled={message.length===0}/>
             </div>
 
         </div>
