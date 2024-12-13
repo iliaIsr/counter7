@@ -12,7 +12,7 @@ type UiCounterPropsType = {
 export const UiCounter = (props: UiCounterPropsType) => {
 
     const onClickHandler = (value: string) => props.FooInc(value)
-    const Disabled = props.message.length !
+    const Disabled = props.message.length
     const DisabledInc =Disabled || props.viewValue === props.maxValue;
     const DisabledRes = Disabled || props.viewValue === props.startValue
 
